@@ -1,0 +1,51 @@
+SP HANDBOOK — CLAUDE CODE KICKOFF PROMPT
+========================================
+
+How to use:
+1. Create a project folder and put BOTH of these files in it:
+     - SPHandbook.jsx   (the working prototype — the visual source of truth)
+     - CLAUDE.md        (the full written spec)
+2. Open a terminal in that folder and run:  claude
+3. Paste everything below the line into Claude Code.
+
+------------------------------------------------------------------------------
+
+Read CLAUDE.md in this folder — it is the full spec — and use SPHandbook.jsx as
+the visual source of truth. SPHandbook.jsx is a working single-file React +
+Tailwind prototype of "SP Handbook," an internal employee handbook & people
+directory. Turn it into a real, production-ready app.
+
+Target: Next.js (App Router) + TypeScript + Tailwind, deployable on Vercel and
+installable as a PWA. One responsive codebase for desktop and mobile browsers —
+NOT a native app.
+
+Please:
+1. Scaffold a Next.js (App Router) + TypeScript + Tailwind project.
+2. Port the prototype's design tokens (the palette, Newsreader + Inter fonts via
+   next/font, spacing, radii, shadows) into the Tailwind theme + a global
+   stylesheet. Match the look exactly.
+3. Split the single file into clean routes/components: Landing, Login,
+   Departments, Sections, Directory, and the paged Photobook profile. Keep both
+   responsive layouts (web + mobile) but REMOVE the prototype's "Preview
+   Web/Mobile" toggle and phone frame — production should respond to the real
+   viewport only.
+4. Mark interactive pieces as client components ("use client"): login state,
+   search, section chips, and the photobook swipe/flip/keyboard logic.
+5. Keep the photobook exactly as specified: row 1 = tinted wording panel + photo,
+   row 2 = full-width photo; two photos per person (second is a monochrome
+   companion); swipe + mouse-drag + arrow keys to flip; Next/Prev loop the WHOLE
+   department; page counter + dots on web, slide-up bottom sheet on mobile.
+6. Move the mock DEPARTMENTS / SECTIONS / EMPLOYEES data and the helper functions
+   into a typed data layer (e.g. lib/data.ts) that I can later reimplement
+   against Supabase without changing the UI. Keep the same sample data for now.
+7. Serve portraits through next/image with the monogram-initials fallback.
+   Respect prefers-reduced-motion and keep visible keyboard focus.
+8. Configure it as an installable PWA (manifest + icons + add-to-home-screen).
+9. Set it up to deploy on Vercel and write a README with run + deploy steps.
+
+Before you start, ask me about: (a) how login should work for now, and (b) the
+eventual real data source. My answers will be: (a) keep login open/no-auth for
+now, real auth later; (b) the data source will be Supabase, so structure the
+data layer to drop in cleanly.
+
+Then build it step by step, checking in at each milestone.
