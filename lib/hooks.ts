@@ -2,6 +2,20 @@
 
 import { useEffect, useRef, useState } from "react";
 
+/**
+ * Time-of-day greeting, computed on the client only. Returns "" during SSR and
+ * first paint so server/client markup matches (the server's clock is UTC and
+ * would otherwise mismatch the user's local time and break hydration).
+ */
+export function useGreeting(): string {
+  const [g, setG] = useState("");
+  useEffect(() => {
+    const h = new Date().getHours();
+    setG(h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening");
+  }, []);
+  return g;
+}
+
 /** Tracks the user's prefers-reduced-motion setting. */
 export function useReduceMotion(): boolean {
   const [reduce, setReduce] = useState(false);

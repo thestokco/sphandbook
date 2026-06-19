@@ -4,7 +4,8 @@ import { ChevronRight, LogOut } from "lucide-react";
 import { MHeader } from "@/components/MHeader";
 import { PhotoBand } from "@/components/PhotoBand";
 import { Reveal } from "@/components/Reveal";
-import { COMPANIES, COMPANY_GROUP, greeting } from "@/lib/data";
+import { COMPANIES, COMPANY_GROUP } from "@/lib/data";
+import { useGreeting } from "@/lib/hooks";
 
 export function MDashboard({
   onOpen,
@@ -13,6 +14,7 @@ export function MDashboard({
   onOpen: (k: string) => void;
   onSignOut: () => void;
 }) {
+  const greeting = useGreeting();
   return (
     <div className="m-screen">
       <MHeader
@@ -23,7 +25,7 @@ export function MDashboard({
         }
       />
       <div className="m-subhead m-subhead-title">
-        <p className="eyebrow">{greeting()}</p>
+        <p className="eyebrow">{greeting}</p>
         <h2 className="display" style={{ fontSize: 23, lineHeight: 1.1, marginTop: 1 }}>
           {COMPANY_GROUP}
         </h2>

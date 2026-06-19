@@ -4,7 +4,8 @@ import { LogOut } from "lucide-react";
 import { Masthead } from "@/components/Masthead";
 import { PhotoBand } from "@/components/PhotoBand";
 import { Reveal } from "@/components/Reveal";
-import { COMPANIES, COMPANY_GROUP, greeting, peopleInCompany } from "@/lib/data";
+import { COMPANIES, COMPANY_GROUP, peopleInCompany } from "@/lib/data";
+import { useGreeting } from "@/lib/hooks";
 
 export function Dashboard({
   onOpen,
@@ -13,6 +14,7 @@ export function Dashboard({
   onOpen: (k: string) => void;
   onSignOut: () => void;
 }) {
+  const greeting = useGreeting();
   return (
     <div className="screen-bg min-h-screen flex flex-col">
       <div className="page-sticky">
@@ -26,7 +28,7 @@ export function Dashboard({
         />
         <div className="page-pad page-head">
           <Reveal delay={60}>
-            <p className="eyebrow mb-3">{greeting()}</p>
+            <p className="eyebrow mb-3">{greeting}</p>
             <h2 className="display section-title">{COMPANY_GROUP}</h2>
             <p className="lede mt-3" style={{ maxWidth: 520 }}>
               Choose a company to see how it&apos;s organised.
