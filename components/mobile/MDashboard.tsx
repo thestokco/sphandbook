@@ -22,20 +22,17 @@ export function MDashboard({
           </button>
         }
       />
-      <div className="m-pad">
-        <Reveal delay={40}>
-          <p className="eyebrow">{greeting()}</p>
-          <h2
-            className="display"
-            style={{ fontSize: 28, lineHeight: 1.08, marginTop: 6 }}
-          >
-            {COMPANY_GROUP}
-          </h2>
-          <p className="lede" style={{ fontSize: 14, marginTop: 8 }}>
-            Choose a company to see how it&apos;s organised.
-          </p>
-        </Reveal>
-        <div className="m-list" style={{ marginTop: 22 }}>
+      <div className="m-subhead m-subhead-title">
+        <p className="eyebrow">{greeting()}</p>
+        <h2 className="display" style={{ fontSize: 23, lineHeight: 1.1, marginTop: 1 }}>
+          {COMPANY_GROUP}
+        </h2>
+        <p className="lede" style={{ fontSize: 13, marginTop: 3 }}>
+          Choose a company to see how it&apos;s organised.
+        </p>
+      </div>
+      <div className="m-pad" style={{ paddingTop: 18 }}>
+        <div className="m-list">
           {COMPANIES.map((c, i) => {
             return (
               <Reveal key={c.key} delay={120 + i * 55}>

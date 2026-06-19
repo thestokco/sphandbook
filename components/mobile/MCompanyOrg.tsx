@@ -48,25 +48,21 @@ export function MCompanyOrg({
           </button>
         }
       />
-      <div className="m-pad">
-        <Reveal delay={40}>
-          <p className="eyebrow">{COMPANY_GROUP} · Company</p>
-          <h2
-            className="display"
-            style={{ fontSize: 28, lineHeight: 1.08, marginTop: 6 }}
-          >
-            {name}
-          </h2>
-          <p className="lede" style={{ fontSize: 14, marginTop: 8 }}>
-            {ceo
-              ? `Led by ${ceo.name}, ${ceo.title}.`
-              : "No teams have been added to this company yet."}
-          </p>
-        </Reveal>
-
+      <div className="m-subhead m-subhead-title">
+        <p className="eyebrow">{COMPANY_GROUP} · Company</p>
+        <h2 className="display" style={{ fontSize: 23, lineHeight: 1.1, marginTop: 1 }}>
+          {name}
+        </h2>
+        <p className="lede" style={{ fontSize: 13, marginTop: 3 }}>
+          {ceo
+            ? `Led by ${ceo.name}, ${ceo.title}.`
+            : "No teams have been added to this company yet."}
+        </p>
+      </div>
+      <div className="m-pad" style={{ paddingTop: 18 }}>
         {ceo ? (
           <Reveal delay={180}>
-            <div className="m-tree" style={{ marginTop: 22 }}>
+            <div className="m-tree">
               <button className="m-ceo-node" onClick={() => onOpenCeo(ceo)}>
                 <Avatar emp={ceo} size={56} />
                 <span className="m-ceo-main">

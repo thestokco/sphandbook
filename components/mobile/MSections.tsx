@@ -38,21 +38,18 @@ export function MSections({
           </button>
         }
       />
-      <div className="m-pad">
-        <Reveal delay={40}>
-          <p className="eyebrow">{COMPANY} · Department</p>
-          <h2
-            className="display"
-            style={{ fontSize: 28, lineHeight: 1.08, marginTop: 6 }}
-          >
-            {dept.name}
-          </h2>
-          <p className="lede" style={{ fontSize: 14, marginTop: 8 }}>
-            {dept.tag} Choose a section to meet its people.
-          </p>
-        </Reveal>
+      <div className="m-subhead m-subhead-title">
+        <p className="eyebrow">{COMPANY} · Department</p>
+        <h2 className="display" style={{ fontSize: 23, lineHeight: 1.1, marginTop: 1 }}>
+          {dept.name}
+        </h2>
+        <p className="lede" style={{ fontSize: 13, marginTop: 3 }}>
+          {dept.tag} Choose a section to meet its people.
+        </p>
+      </div>
+      <div className="m-pad" style={{ paddingTop: 18 }}>
         <Reveal delay={180}>
-          <div className="m-tree" style={{ marginTop: 22 }}>
+          <div className="m-tree">
             <div className="org-node m-node org-node-sm">
               <span className="org-node-glyph" />
               <span className="org-node-label">Department</span>
