@@ -20,7 +20,7 @@ export function Masthead({
             aria-label="SP Group — departments"
             className="logo-link"
           >
-            <Logo size={44} />
+            <Logo size={56} />
           </Link>
           {left && <span className="mast-divider" />}
           {left && <span className="eyebrow">{left}</span>}

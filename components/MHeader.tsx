@@ -26,7 +26,7 @@ export function MHeader({
           aria-label="SP Group — departments"
           className="logo-link"
         >
-          <Logo size={30} showWord={!title} />
+          <Logo size={38} showWord={!title} />
         </Link>
         {title && <span className="m-title">{title}</span>}
       </div>
